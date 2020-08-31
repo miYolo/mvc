@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-22 07:37:51
+/* Smarty version 3.1.34-dev-7, created on 2020-08-24 13:36:33
   from 'D:\wamp64\www\mvc\application\template\admin\login.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f40cb4f07f3f8_90234964',
+  'unifunc' => 'content_5f43c26196a360_01555259',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3f3b4c70c77cf9a3d962abcf3490b636da31ffd1' => 
     array (
       0 => 'D:\\wamp64\\www\\mvc\\application\\template\\admin\\login.html',
-      1 => 1598081867,
+      1 => 1598259710,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f40cb4f07f3f8_90234964 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f43c26196a360_01555259 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -44,7 +44,7 @@ jquery.validate.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  src="<?php echo JS_ADD;?>
-aimin.js"><?php echo '</script'; ?>
+admin.js"><?php echo '</script'; ?>
 >
 
 
@@ -82,8 +82,7 @@ aimin.js"><?php echo '</script'; ?>
         <label for="inputPassword3" class="col-sm-2 control-label"></label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="code" placeholder="请输入验证码" name="code">
-            <img src="http://localhost/mvc/index.php/admin/index/mycode" alt="" onclick="this.src='http://localhost/mvc/index.php/admin/index/mycode?'+Math.random()" style="cursor: pointer;width:120px;height:30px;margin-bottom: 10px">
-
+            <img src="http://localhost/mvc/index.php/admin/index/mycode" alt="" onclick="this.src='http://localhost/mvc/index.php/admin/index/mycode?'+Math.random()" style="cursor: pointer;height:30px;margin: 10px 0 0">
         </div>
     </div>
 

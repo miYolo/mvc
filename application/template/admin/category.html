@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{CSS_ADD}admin/bootstrap.css">
+    <script src="{JS_ADD}Jquery3.5.1.js"></script>
+    <style>
+        .panel {
+            width: 320px;
+            height: 180px;
+            background-color: whitesmoke;
+            box-shadow: 0 0 10px #000;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 1;
+            display: none;
+        }
+
+        .close {
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+<div class="ENTRY_ADD" style="display: none">{ENTRY_ADD}</div>
+<div class="ENTRY_ADD1" style="display: none">{ENTRY_ADD}</div>
+<div class="ENTRY_ADD2" style="display: none">{ENTRY_ADD}</div>
+<div class="container">
+
+    {if $data}
+    <table class="table table-bordered">
+        {$data}
+    </table>
+    {else}
+    <table>
+        <tr>
+            <td>没有数据</td>
+        </tr>
+    </table>
+    {/if}
+</div>
+
+<div class="panel addPanel">
+    <div class="close">
+        x
+    </div>
+    <form action="{ENTRY_ADD}/admin/category/add" method="post">
+        <input type="text" name="cname"><br>
+        <input type="hidden" name="cid" id="cid"><br>
+        <select name="isshow" id="">
+            <option value="1">在导航可见</option>
+            <option value="0">在导航不可见</option>
+        </select><br>
+        <input type="text" name="tpl_name" placeholder="输入对应的模板"><br>
+        栏目描述<textarea name="info"></textarea>
+
+        <input type="submit" value="提交">
+    </form>
+</div>
+
+<div class="panel delPanel">
+    <div class="close">
+        x
+    </div>
+    <form action="{ENTRY_ADD}/admin/category" method="POST">
+        <input type="text" name="cname">
+        <input type="submit" value="">
+    </form>
+</div>
+
+
+<div class="panel editPanel">
+    <div class="close">
+        x
+    </div>
+    <form action="{ENTRY_ADD}/admin/category/add" method="post">
+        <input type="text" name="cname">
+        <select name="pid" id="opts">
+        </select>
+        <select name="isshow" id="isshow">
+            <option value="1">在导航可见</option>
+            <option value="0">在导航不可见</option>
+        </select><br>
+        <input type="text" name="tpl_name" placeholder="输入对应的模板"><br>
+        栏目描述<textarea name="info"></textarea>
+        <input type="hidden" value="" class="cidEdit" name="cidEdit">
+        <input type="hidden" name="imgurl" id="imgurl">
+        <div class="editUpload"></div>
+        <input type="button" value="修改" class="change">
+    </form>
+    <div class="ENTRY_ADD" style="display: none">{ENTRY_ADD}</div>
+</div>
+
+<script src="{JS_ADD}category.js"></script>
+<script src="{JS_ADD}upload.js"></script>
+<script>
+    const a = document.querySelector(".ENTRY_ADD");
+    const b = a.innerHTML + "/admin/category/uploadfile";
+    var upObj = new upload();
+    upObj.createView({
+        parent: document.querySelector(".editUpload")
+    })
+    upObj.up(b,function (e){
+        $("#imgurl").val(e[0]);
+    })
+</script>
+</body>
+</html>

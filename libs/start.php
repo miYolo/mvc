@@ -5,6 +5,8 @@ if(!defined("MVC")){
     die("访问路径不合法");
 }
 
+//以下定义通过HTTP协议访问的路径
+define("HOST_ADD","http://".$_SERVER["HTTP_HOST"]);
 //服务起所在的根路径
 define("ROOT_PATH",$_SERVER["DOCUMENT_ROOT"]);
 
@@ -31,8 +33,7 @@ define("CACHE_PATH",APP_NAME."cache".DIRECTORY_SEPARATOR);
 //定义smarty的路径
 //以上定义都是各种文件在本低的路径
 define("SMARTY_PATH",LIBS_PATH."smarty".DIRECTORY_SEPARATOR);
-//以下定义通过HTTP协议访问的路径
-define("HOST_ADD","http://".$_SERVER["HTTP_HOST"]);
+
 
 //单入口文件地址
 define("ENTRY_ADD",HOST_ADD.$_SERVER["SCRIPT_NAME"]);

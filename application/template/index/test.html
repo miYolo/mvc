@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        .lists-box {
+            width: 800px;
+            background-color: #FFFFFF;
+            margin: 10px auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            height: 500px;
+        }
+        .list{
+            width: 170px;
+            height: 170px;
+        }
+    </style>
+</head>
+<body>
+{include file=$header}
+<ul class="lists-box">
+    {foreach $sonInfo as $v}
+    <li class="list">
+        <a href="{ENTRY_ADD}/index/lists?cid={$v['cid']">
+            <img src="{$v['imgurl']}" alt="" height="60">
+            <h3>{$v["canme"]}</h3>
+            <div>{$v["info"]}}</div>
+        </a>
+    </li>
+{/foreach}
+</ul>
+{include file=$footer}
+</body>
+</html>

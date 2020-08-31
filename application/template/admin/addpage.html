@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="{JS_ADD}upload.js"></script>
+<form action="{ENTRY_ADD}/admin/category/add" style="margin-top: 24px" method="post" ENCTYPE="multipart/form-data">
+    <input type="text" placeholder="添加一级栏目" name="cname"><br>
+    <select name="isshow" id="">
+        <option value="1">在导航可见</option>
+        <option value="0">在导航不可见</option>
+    </select><br>
+    <input type="text" name="tpl_name" placeholder="输入对应的模板"><br>
+    栏目描述<textarea name="info" cols="30" rows="10"></textarea>
+    <input type="hidden" value="hidden" name="imgurl">
+    <!--    <iframe src="{ENTRY_ADD}/admin/category/upload" frameborder="0" name="a"></iframe>-->
+    <input type="file" name="file">
+    <div class="upload"></div>
+    <input type="submit" value="添加">
+</form>
+<div class="ENTRY_ADD" style="display: none">{ENTRY_ADD}</div>
+<script src="{JS_ADD}Jquery3.5.1.js"></script>
+<script>
+    var uploadObj = new upload();
+    uploadObj.createView({
+        parent: document.querySelector(".upload")
+    })
+    const a = document.querySelector(".ENTRY_ADD");
+    const b = a.innerHTML + "/admin/category/uploadfile";
+    uploadObj.up(b, function (e) {
+        $("input[type=hidden]").val(e[0]);
+    })
+</script>
+</body>
+</html>

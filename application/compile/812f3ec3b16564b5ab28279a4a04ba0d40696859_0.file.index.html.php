@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-08-23 13:19:47
+/* Smarty version 3.1.34-dev-7, created on 2020-08-27 07:19:53
   from 'D:\wamp64\www\mvc\application\template\admin\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f426cf33eec21_35327183',
+  'unifunc' => 'content_5f475e99cf9fd4_43818513',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '812f3ec3b16564b5ab28279a4a04ba0d40696859' => 
     array (
       0 => 'D:\\wamp64\\www\\mvc\\application\\template\\admin\\index.html',
-      1 => 1598188772,
+      1 => 1598512741,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5f426cf33eec21_35327183 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f475e99cf9fd4_43818513 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -124,7 +124,7 @@ border: yellow 1px solid;
                 用户管理
                 <ul class="son">
                     <li >
-                        <a href="adduser.html" target="main">添加用户</a>
+                        <a href="adduser.html" target="main">查看用户</a>
                     </li>
                     <li><a href="edituser.html" target="main">修改用户</a></li>
                 </ul>
@@ -132,19 +132,21 @@ border: yellow 1px solid;
             <li >
                 栏目管理
                 <ul class="son">
-                    <li >
-                        添加栏目
-                    </li>
-                    <li>修改栏目</li>
+                    <li><a href="<?php echo ENTRY_ADD;?>
+/admin/category/addpage" target="main">添加栏目</a></li>
+                    <li><a href="<?php echo ENTRY_ADD;?>
+/admin/category" target="main">查看栏目</a></li>
                 </ul>
             </li>
             <li >
                 内容管理
                 <ul class="son">
                     <li>
-                        <a href="adduser.html">添加内容</a>
+                        <a href="<?php echo ENTRY_ADD;?>
+/admin/content/add" target="main">添加内容</a>
                     </li>
-                    <li>修改内容</li>
+                    <li> <a href="<?php echo ENTRY_ADD;?>
+/admin/content/showList" target="main">查看内容</a></li>
                 </ul>
             </li>
         </ul>

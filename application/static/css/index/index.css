@@ -1,0 +1,87 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+ul,li{
+    list-style:none;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #777777;
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    align-items: center;
+}
+
+.logo img{
+    width: 146px;
+    height: 51px;
+}
+.logo h3{
+    font-size: 20px;
+    font-weight: 500;
+    color: #666;
+}
+
+.menu{
+    width: 730px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.menu>li{
+    width: 14.285%;
+    height: 100%;
+
+    text-align: center;
+    line-height: 100px;
+    color: #666;
+    font-size: 20px;
+    font-family: "微软雅黑",Futura-CondensedMedium,HelveticaNeue,HiraginoSansGB-W3,STHeiti,"Microsoft YaHei",tahoma;
+}
+
+.son{
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 50px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+    transform: translateY(30px);
+   visibility: hidden;
+}
+.son>li{
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.wheel{
+    width: 100%;
+    height: 400px;
+    background-color: #e7e7e7;
+}
+
+.menu>li:hover .son{
+    transform: translateY(0px);
+    transition: all 0.3s linear;
+    visibility: visible;
+}

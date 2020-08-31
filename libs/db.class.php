@@ -8,8 +8,7 @@ class db{
         $password=isset($config["database"]["password"])?$config["database"]["password"]:"12345";
         $dbname=isset($config["database"]["dbname"])?$config["database"]["dbname"]:"";
         $port=isset($config["database"]["port"])?$config["database"]["port"]:3308;
-
-        $db= new \mysqli($host,$username,$password,$dbname,$port);
+        $db=@new \mysqli($host,$username,$password,$dbname,$port);
         if($db->connect_error){
             echo "数据库连接出错";
         }

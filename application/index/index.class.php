@@ -1,5 +1,10 @@
 <?php
-if(!defined("MVC")){
+
+use \libs\smarty;
+use \libs\db;
+use \libs\getheader;
+
+if (!defined("MVC")) {
     die("非法入侵");
 }
 //后台管理
@@ -10,7 +15,28 @@ class index
 {
     function int()
     {
-echo "前台页面";
+        $smarty = new smarty();
+//        $arr=array();
+//        $database=new db();
+//        $db=$database->db;
+//        $i=0;
+//   $result=$db->query("select * from mvc_category where pid=0");
+//     while ($row=$result->fetch_assoc()){
+//         $arr[$i]=$row;
+//       $result1=  $db->query("select * from mvc_category where pid=".$row['cid']);
+//       while ($row1=$result1->fetch_assoc()){
+//           $arr[$i]["child"][]=$row1;
+//       }
+//       $i++;
+//     }
+
+        $header = new getheader();
+        $smarty->assign("menuData", $header->menuData);
+        $smarty->assign("header", "$header->header");
+        $smarty->assign("footer", "$header->footer");
+        $smarty->display("index/index.html");
+    }
+}
 
 //        $smarty = new Smarty();
 //        $smarty->setTemplateDir(TPL_PATH);
@@ -41,7 +67,7 @@ echo "前台页面";
 //        if ($db->affected_rows > 0) {
 //echo "操作成功";
 //        }
-        //结果集对象
+//结果集对象
 //        $result = $db->query("select * from demo");
 //
 //
@@ -60,6 +86,4 @@ echo "前台页面";
 //        $smarty->assign("data", $data);
 //        $smarty->display("login.html");
 //
-    }
-}
 //方法名字和类的名字一样的话 这个函数就是构造函数 实例化的时候输出两次函数里面的内容

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{include file=$header}
+<div class="news-box">
+<h3>新闻中心</h3>
+<div class="info">{$currentInfo['info']}</div>
+<h3>
+    {foreach $sonInfo as $v}
+    <a href="{ENTRY_ADD}index/lists?cid{$v['cid']}">{$v['cname']}</a>
+    {/foreach}
+
+</h3>
+    <div class="list-box">
+        {foreach $coninfo[0] as $v}
+        <a class="list" href="{ENTRY_ADD}index/show?conid={$v['conid']}">
+            <img src="{$v['imgurl']}" alt="">
+            <h4>{$v['ctitle']}</h4>
+            <div class="news-info">{$v['info']}</div>
+        </a>
+        {/foreach}
+    </div>
+</div>
+{include file=$footer}
+</body>
+</html>
